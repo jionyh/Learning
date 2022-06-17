@@ -1,54 +1,98 @@
-let spaceshipName = prompt('Qual o nome da nave?')
-let spaceshipVelocity = 0
-let chosen
-function showMenu() {
-    let option
-    while (option != '1' && option != '2' && option != '3' && option != '4') {
-        option = prompt('O que deseja fazer?\n' +
-            '1 - Acelerar a nave em 5km/s\n' +
-            '2 - Desacelerar a nave em 5 km/s\n' +
-            '3 - Imprimir dados de bordo\n' +
-            '4 - Sair do Programa'
-        )
-    }
-    return option
+let jogador0 = prompt('Qual o nome do jogador 1 "X"?');
+let jogador1 = prompt('Qual o nome do jogador 2 "O"?');
+var ca1;
+var ca2;
+var ca3;
+var ca4;
+var ca5;
+var ca6;
+var ca7;
+var ca8;
+var ca9;
+var casa = ''
 
-}
+var venceu = 0;
+var jogador = 0;
 
-function acelerar(velocity){
-let speed = velocity + 5
-return speed
-
-}
-
-function desacelerar(velocity){
-    let speedDown = velocity - 5
-    if(speedDown <= 0){
-        speedDown = 0
-    }
-return speedDown
-}
-
-function imprimir(name, speed){
-    alert('Nave: ' + name +
-    '\nVelocidade: ' + speed
-    )    
-}
-
-do{
-    chosen = showMenu()
-    switch(chosen){
-        case '1':
-            spaceshipVelocity = acelerar(spaceshipVelocity)
+function jogada(casa, posicao){
+    if (jogador == 0) {
+        document.querySelector(posicao).setAttribute("src", "x.png");
+        switch (casa) {
+          case 'casa1':
+            ca1 = 0;
             break
-        case '2':
-            spaceshipVelocity = desacelerar(spaceshipVelocity)
+          case 'casa2':
+            ca2 = 0;
             break
-        case '3':
-            imprimir(spaceshipName, spaceshipVelocity)
+          case 'casa3':
+            ca3 = 0;
             break
-        case '4':
-            alert('Saindo do programa...')
-        
-    }
-} while (chosen != 4)
+          case 'casa4':
+            ca4 = 0;
+            break
+          case 'casa5':
+            ca5 = 0;
+            break
+          case 'casa6':
+            ca6 = 0;
+            break
+          case 'casa7':
+            ca7 = 0;
+            break
+          case 'casa8':
+            ca8 = 0;
+            break
+          case 'casa9':
+            ca9 = 0;
+            break
+        }
+        jogador = 1;
+      } else {
+        document.querySelector(posicao).setAttribute("src", "o.png");
+        switch (casa) {
+          case 'casa1':
+            ca1 = 1;
+            break
+          case 'casa2':
+            ca2 = 1;
+            break
+          case 'casa3':
+            ca3 = 1;
+            break
+          case 'casa4':
+            ca4 = 1;
+            break
+          case 'casa5':
+            ca5 = 1;
+            break
+          case 'casa6':
+            ca6 = 1;
+            break
+          case 'casa7':
+            ca7 = 1;
+            break
+          case 'casa8':
+            ca8 = 1;
+            break
+          case 'casa9':
+            ca9 = 1;
+            break
+        }
+        jogador = 0;
+      }
+}
+
+function marcar(pos) {
+  casa = pos
+  var posicao = "." + pos;
+  if (ca1 == 0 && ca2 ==0 && ca3 ==0 || ca1 == 0 && ca4 ==0 && ca7 ==0 || ca1 == 0 && ca5 ==0 && ca9 ==0 || ca7 == 0 && ca8 ==0 && ca9 ==0 || ca4 == 0 && ca5 == 0 && ca6 ==0 || ca3 == 0 && ca6 ==0 && ca9 ==0 || ca3 == 0 && ca5 == 0 && ca7 == 0 || ca2 == 0 & ca5 == 0 && ca8 == 0){
+    alert('O Jogador ' + jogador0 + ' Venceu!')
+    location.reload()
+} if(ca1 == 1 && ca2 == 1 && ca3 == 1 || ca1 == 1 && ca4 == 1 && ca7 == 1 || ca1 == 1 && ca5 == 1 && ca9 == 1 || ca7 == 1 && ca8 == 1 && ca9 == 1 || ca4 == 1 && ca5 == 1 && ca6 == 1 || ca3 == 1 && ca6 == 1 && ca9 == 1 || ca3 == 1 && ca5 == 1 && ca7 == 1 || ca2 == 1 & ca5 == 1 && ca8 == 1){
+  alert('O Jogador ' + jogador1 + ' Venceu!')
+  location.reload()
+}
+else {
+    jogada(casa, posicao)
+}}
+

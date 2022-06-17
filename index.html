@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Command Informática</title>
-    </head>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
 <body>
-<h1>Exercicio Objeto</h1>
-
+    <h1 id="titulo">Jogo da velha</h1>
+    <div id="principal">
+    <table>
+        <tr>
+            <td id="casa1" onclick=marcar(this.id)><img src="" class="casa1"></td>
+            <td id="casa2" onclick=marcar(this.id)><img src="" class="casa2"></td>
+            <td id="casa3" onclick=marcar(this.id)><img src="" class="casa3"></td>
+        </tr>
+        <tr>
+            <td id="casa4" onclick=marcar(this.id)><img src="" class="casa4"></td>
+            <td id="casa5" onclick=marcar(this.id)><img src="" class="casa5"></td>
+            <td id="casa6" onclick=marcar(this.id)><img src="" class="casa6"></td>
+        </tr>
+        <tr>
+            <td id="casa7" onclick=marcar(this.id)><img src="" class="casa7"></td>
+            <td id="casa8" onclick=marcar(this.id)><img src="" class="casa8"></td>
+            <td id="casa9" onclick=marcar(this.id)><img src="" class="casa9"></td>
+        </tr>
+    </table>
+</div>
     <script src="script.js"></script>
 </body>
-
 </html>
